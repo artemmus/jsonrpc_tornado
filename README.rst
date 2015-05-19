@@ -17,7 +17,7 @@ A synchronous example:
     from jsonrpc_tornado import JSONRPCServer
     from tornado.httpclient import HTTPClient
 
-    def fetch_coroutine(server_url):
+    def fetch(server_url):
         server = JSONRPCServer(server_url, http_client=HTTPClient, 
             request_timeout=5.0)
 
