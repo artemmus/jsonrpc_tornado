@@ -102,10 +102,14 @@ class JSONRPCServer(object):
         try:
             http_response = self._request(body=request_body)
         except HTTPError as err:
-            raise TransportError(
-                'Error calling method {}'.format(method_name),
-                err
-            )
+            # error 4xx contains JSON-RPC error explanation in err.response
+            http_response = err.response
+            # raise only server errors
+            if err.code >= 500:
+                raise TransportError(
+                    'Error calling method {}'.format(method_name),
+                    err
+                )
 
         resp, exc = self.get_response_and_exception(http_response,
                                                     is_notification)
