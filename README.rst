@@ -6,7 +6,12 @@ Main Features
 
 * Python 2.7 & 3.4 compatible
 * Exposes tornado.httpclient options
+* Non-Blocking I/O
 * Supports nested namespaces (eg. `app.users.getUsers()`)
+
+Install
+-------
+pip install git+https://github.com/artemmus/jsonrpc_tornado.git
 
 Usage
 -----
