@@ -11,7 +11,7 @@ Main Features
 
 Install
 -------
-pip install git+https://github.com/artemmus/jsonrpc_tornado.git
+pip install jsonrpc_tornado
 
 Usage
 -----
